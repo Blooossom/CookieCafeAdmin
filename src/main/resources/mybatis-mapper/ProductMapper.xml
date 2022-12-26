@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cookiecafeadmin.mapper.ProductMapper">
+    <select id="selectProductList" resultType="com.example.cookiecafeadmin.dto.Product">
+        SELECT
+            productname,
+            thumb,
+            ordernum,
+            price,
+            status,
+            amount,
+            content,
+            summary,
+            markettype,
+            indate
+            FROM product
+            ORDER BY indate DESC
+    </select>
+    <insert id="addProduct" parameterType="com.example.cookiecafeadmin.dto.Product">
+        INSERT INTO product (
+            id,
+            productname,
+            thumb,
+            ordernum,
+            status,
+            amount,
+            price,
+            content,
+            markettype,
+            summary
+            ) VALUES (
+            #{productname},
+            #{thumb},
+            #{ordernum},
+            #{status},
+            #{amount},
+            #{price},
+            #{content},
+            #{markettype},
+            #{summary}
+            )
+    </insert>
+    <insert id="addCateMap" parameterType="com.example.cookiecafeadmin.dto.Product">
+        INSERT INTO catemap (
+                            cateid,
+                             etcid,
+                             etctable
+        ) VALUES (
+                 #{cateid},
+                  #{id},
+                  ,'product'
+                         )
+    </insert>
+</mapper>
