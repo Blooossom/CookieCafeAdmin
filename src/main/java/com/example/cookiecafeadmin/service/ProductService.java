@@ -13,17 +13,17 @@ import java.util.List;
 public class ProductService {
 
     @Autowired
-    ProductRepository pr;
+    ProductRepository repo;
 
     public List<Product> selectProductList(){
-        return pr.selectProductList();
+        return repo.selectProductList();
     }
 
     @Transactional
     public String addProduct(Product product){
         int result = 0;
-        result += pr.addProduct(product);
-        result += pr.addCateMap(product);
+        result += repo.addProduct(product);
+        result += repo.addCateMap(product);
 
         if (result > 0) {
             return "success";
@@ -32,6 +32,30 @@ public class ProductService {
         }
     }
 
+    public String deleteProduct(Product product) {
+        int result = 0;
+        result += repo.deleteProduct(product);
+        if (result > 0) {
+            return "success";
+        } else {
+            return "failed";
+        }
+    }
 
+    public Product selectProduct(String id){
+        return repo.selectProduct(id);
+    }
+
+    public String updateProduct(Product product){
+        int result = 0;
+        result += repo.updateProduct(product);
+        result += repo.deleteCateMap(product);
+        result += repo.addCateMap(product);
+        if (result > 0) {
+            return "success";
+        } else {
+            return "failed";
+        }
+    }
 
 }

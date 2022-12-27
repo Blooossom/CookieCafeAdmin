@@ -28,5 +28,18 @@ public class ProductRepository {
         return mapper.addProduct(product);
     }
 
+    public int deleteProduct(Product product) {
+        return mapper.deleteProduct(product);
+    }
+    public Product selectProduct(String id){
+        return mapper.selectProduct(id);
+    }
+    public int updateProduct(Product product){
+        return mapper.updateProduct(product);
+    }
+
+    public int deleteCateMap(Product product){
+        return mapper.deleteCateMap(product);
+    }
 
 }

@@ -40,6 +40,40 @@
             #{summary}
             )
     </insert>
+    <delete id="deleteProduct" parameterType="com.example.cookiecafeadmin.dto.Product">
+        DELETE FROM
+                   product
+        WHERE ID = #{id}
+    </delete>
+
+    <select id="selectProduct" parameterType="com.example.cookiecafeadmin.dto.Product" resultType="com.example.cookiecafeadmin.dto.Product">
+        SELECT
+            productname,
+            thumb,
+            ordernum,
+            price,
+            status,
+            amount,
+            content,
+            summary,
+            markettype,
+            indate
+        FROM product
+        WHERE ID = #{id}
+    </select>
+    <update id="updateProduct" parameterType="com.example.cookiecafeadmin.dto.Product">
+        UPDATE PRODUCT SET
+                           PRODUCTNAME = #{productname},
+                           THUMB = #{thumb},
+                           STATUS = #{status},
+                           ORDERNUM = #{ordernum},
+                           PRICE = #{price},
+                           AMOUNT = #{amount},
+                           SUMMARY = #{summary},
+                           MARKETTYPE = #{markettype},
+                           CONTENT = #{content}
+        WHERE ID = #{id}
+    </update>
     <insert id="addCateMap" parameterType="com.example.cookiecafeadmin.dto.Product">
         INSERT INTO catemap (
                             cateid,
@@ -51,4 +85,9 @@
                   ,'product'
                          )
     </insert>
+    <delete id="deleteCateMap" parameterType="com.example.cookiecafeadmin.dto.Product">
+        DELETE FROM CATEMAP
+        WHERE ETCID = #{id}
+        AND ETCTABLE = 'PRODUCT'
+    </delete>
 </mapper>

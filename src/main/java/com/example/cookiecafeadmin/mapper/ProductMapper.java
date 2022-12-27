@@ -11,9 +11,17 @@ public interface ProductMapper {
 
     public List<Product> selectProductList();
 
-    public int addCateMap(Product product);
 
     public int addProduct(Product product);
+
+    public int deleteProduct(Product product);
+
+    public Product selectProduct(String id);
+
+    public int updateProduct(Product product);
+    public int addCateMap(Product product);
+
+    public int deleteCateMap(Product product);
 
 
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cookiecafeadmin.mapper.CategoryMapper">
+    <select id="selectCategoryList" resultType="com.example.cookiecafeadmin.dto.Category">
+        SELECT
+            ID,
+            CATENAME,
+            CATETYPE,
+            INDATE
+        FROM
+            CATEGORY
+    </select>
+    <insert id="addCategory" parameterType="com.example.cookiecafeadmin.dto.Category">
+        INSERT INTO CATEGORY(
+                             CATENAME,
+                             CATETYPE
+        ) VALUES (
+                  #{catename},
+                  '제품'
+                         )
+    </insert>
+    <update id="updateCategory" parameterType="com.example.cookiecafeadmin.dto.Category">
+        UPDATE CATEGORY SET
+                            CATENAME = #{catename}
+        WHERE
+            ID = #{id}
+    </update>
+    <delete id="deleteCategory" parameterType="com.example.cookiecafeadmin.dto.Category">
+        DELETE FROM CATEGORY
+        WHERE ID = #{id}
+    </delete>
+</mapper>

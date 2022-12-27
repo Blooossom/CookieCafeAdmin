@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cookiecafeadmin.mapper.SellTimeMapper">
+    <select id="selectSellTimeList" resultType="com.example.cookiecafeadmin.dto.SellTime">
+        SELECT
+            ID,
+            STARTTIME,
+            ENDTIME,
+            INDATE
+        FROM
+            selltime
+        ORDER BY INDATE DESC
+    </select>
+    <insert id="insertSellTime" parameterType="com.example.cookiecafeadmin.dto.SellTime">
+        INSERT INTO selltime(
+                             STARTTIME,
+                             ENDTIME
+        ) VALUES (
+                  #{starttime},
+                  #{endtime}
+                         )
+    </insert>
+    <delete id="deleteSellTime" parameterType="String">
+        DELETE FROM
+                   selltime
+        WHERE ID = #{id}
+    </delete>
+</mapper>
