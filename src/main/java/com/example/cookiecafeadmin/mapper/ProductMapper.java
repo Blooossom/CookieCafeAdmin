@@ -14,7 +14,7 @@ public interface ProductMapper {
 
     public int addProduct(Product product);
 
-    public int deleteProduct(Product product);
+    public int deleteProducts(Product product);
 
     public Product selectProduct(String id);
 

@@ -17,7 +17,7 @@ public class Order {
     private String address;
     private String addressdetail;
     private String indate;
-    private String productName;
+    private String productname;
     private int price;
     private int amount;
 }

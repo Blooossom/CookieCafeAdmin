@@ -17,6 +17,7 @@ public interface CategoryMapper {
 
     public int deleteCategory(Category category);
 
+    public int deleteCateMap(Category category);
 
 
 

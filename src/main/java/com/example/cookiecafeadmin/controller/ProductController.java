@@ -36,12 +36,12 @@ public class ProductController {
         return service.addProduct(product);
     }
     @PutMapping("/products")
-    public String updateProduct(Product product){
+    public String updateProducts(Product product){
         return service.updateProduct(product);
     }
     @DeleteMapping("/products")
-    public String deleteProduct(Product product){
-        return service.deleteProduct(product);
+    public String deleteProducts(Product product){
+        return service.deleteProducts(product);
     }
     @GetMapping("/products/{id}")
     public Product selectProduct(@PathVariable String id){

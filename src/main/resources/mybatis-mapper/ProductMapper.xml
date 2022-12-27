@@ -29,21 +29,23 @@
             markettype,
             summary
             ) VALUES (
-            #{productname},
+            #{productName},
             #{thumb},
-            #{ordernum},
+            #{orderNum},
             #{status},
             #{amount},
             #{price},
             #{content},
-            #{markettype},
+            #{marketType},
             #{summary}
             )
     </insert>
-    <delete id="deleteProduct" parameterType="com.example.cookiecafeadmin.dto.Product">
-        DELETE FROM
-                   product
-        WHERE ID = #{id}
+    <delete id="deleteProducts" parameterType="com.example.cookiecafeadmin.dto.Product">
+        DELETE
+        FROM
+            product
+        WHERE
+            id = #{id}
     </delete>
 
     <select id="selectProduct" parameterType="com.example.cookiecafeadmin.dto.Product" resultType="com.example.cookiecafeadmin.dto.Product">
@@ -63,14 +65,14 @@
     </select>
     <update id="updateProduct" parameterType="com.example.cookiecafeadmin.dto.Product">
         UPDATE PRODUCT SET
-                           PRODUCTNAME = #{productname},
+                           PRODUCTNAME = #{productName},
                            THUMB = #{thumb},
                            STATUS = #{status},
-                           ORDERNUM = #{ordernum},
+                           ORDERNUM = #{orderNum},
                            PRICE = #{price},
                            AMOUNT = #{amount},
                            SUMMARY = #{summary},
-                           MARKETTYPE = #{markettype},
+                           MARKETTYPE = #{marketType},
                            CONTENT = #{content}
         WHERE ID = #{id}
     </update>
@@ -80,7 +82,7 @@
                              etcid,
                              etctable
         ) VALUES (
-                 #{cateid},
+                 #{cateId},
                   #{id},
                   ,'product'
                          )

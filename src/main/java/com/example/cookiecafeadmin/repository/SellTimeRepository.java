@@ -18,8 +18,8 @@ public class SellTimeRepository {
         return mapper.selectSellTimeList();
     }
 
-    public int insertSellTime(SellTime sellTime){
-        return mapper.insertSellTime(sellTime);
+    public int insertSellTimes(SellTime sellTime){
+        return mapper.insertSellTimes(sellTime);
     }
 
     public int deleteSellTime(SellTime sellTime){

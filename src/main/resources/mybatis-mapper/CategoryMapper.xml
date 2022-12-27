@@ -3,30 +3,35 @@
 <mapper namespace="com.example.cookiecafeadmin.mapper.CategoryMapper">
     <select id="selectCategoryList" resultType="com.example.cookiecafeadmin.dto.Category">
         SELECT
-            ID,
-            CATENAME,
-            CATETYPE,
-            INDATE
+            ID
+             ,CATENAME
+             ,CATETYPE
+             ,INDATE
         FROM
             CATEGORY
     </select>
     <insert id="addCategory" parameterType="com.example.cookiecafeadmin.dto.Category">
-        INSERT INTO CATEGORY(
-                             CATENAME,
-                             CATETYPE
+        INSERT INTO category(
+                             catename,
+                             catetype
         ) VALUES (
-                  #{catename},
+                  #{cateName},
                   '제품'
                          )
     </insert>
     <update id="updateCategory" parameterType="com.example.cookiecafeadmin.dto.Category">
-        UPDATE CATEGORY SET
-                            CATENAME = #{catename}
+        UPDATE category SET
+                            catename = #{cateName}
         WHERE
-            ID = #{id}
+            id = #{id}
     </update>
     <delete id="deleteCategory" parameterType="com.example.cookiecafeadmin.dto.Category">
-        DELETE FROM CATEGORY
-        WHERE ID = #{id}
+        DELETE FROM category
+        WHERE id = #{id}
+    </delete>
+    <delete id="deleteCateMap" parameterType="com.example.cookiecafeadmin.dto.Product">
+        DELETE FROM CATEMAP
+        WHERE ETCID = #{id}
+          AND ETCTABLE = 'PRODUCT'
     </delete>
 </mapper>

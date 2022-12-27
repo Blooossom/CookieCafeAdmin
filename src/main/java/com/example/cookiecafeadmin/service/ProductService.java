@@ -31,10 +31,14 @@ public class ProductService {
             return "failed";
         }
     }
-
-    public String deleteProduct(Product product) {
+    @Transactional
+    public String deleteProducts(Product product) {
         int result = 0;
-        result += repo.deleteProduct(product);
+        result += repo.deleteCateMap(product);
+        result += repo.deleteProducts(product);
+        System.out.println(repo.deleteProducts(product));
+        System.out.println(repo.deleteCateMap(product));
+        System.out.println(result);
         if (result > 0) {
             return "success";
         } else {

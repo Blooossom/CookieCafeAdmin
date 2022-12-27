@@ -28,8 +28,8 @@ public class ProductRepository {
         return mapper.addProduct(product);
     }
 
-    public int deleteProduct(Product product) {
-        return mapper.deleteProduct(product);
+    public int deleteProducts(Product product) {
+        return mapper.deleteProducts(product);
     }
     public Product selectProduct(String id){
         return mapper.selectProduct(id);

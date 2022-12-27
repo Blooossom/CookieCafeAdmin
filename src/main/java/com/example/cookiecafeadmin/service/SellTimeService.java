@@ -18,10 +18,10 @@ public class SellTimeService {
         return repo.selectSellTimeList();
     }
 
-    public String insertSellTime(SellTime sellTime){
+    public String insertSellTimes(SellTime sellTime){
         int result = 0;
-        result += repo.insertSellTime(sellTime);
-        if (result > 0) {
+        result += repo.insertSellTimes(sellTime);
+        if (result == 1) {
             return "success";
         } else {
             return "failed";
@@ -31,7 +31,7 @@ public class SellTimeService {
     public String deleteSellTime(SellTime sellTime){
         int result = 0;
         result += repo.deleteSellTime(sellTime);
-        if (result > 0) {
+        if (result == 1) {
             return "success";
         } else {
             return "failed";

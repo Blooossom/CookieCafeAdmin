@@ -24,8 +24,8 @@ public class SwaggerConfig {
     public Docket api() {
 
         List<Predicate<RequestHandler>> predicateList = new ArrayList<>();
-        predicateList.add(RequestHandlerSelectors.basePackage("com.cafe.admin.controller"));
-        predicateList.add(RequestHandlerSelectors.basePackage("com.cafe.admin.login.controller"));
+        predicateList.add(RequestHandlerSelectors.basePackage("com.example.cookiecafeadmin.controller"));
+        predicateList.add(RequestHandlerSelectors.basePackage("com.example.cookiecafeadmin.controller"));
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(swaggerInfo())

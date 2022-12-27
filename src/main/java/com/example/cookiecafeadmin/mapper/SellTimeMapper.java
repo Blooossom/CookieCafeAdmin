@@ -10,7 +10,7 @@ public interface SellTimeMapper {
 
     public List<SellTime> selectSellTimeList();
 
-    public int insertSellTime(SellTime sellTime);
+    public int insertSellTimes(SellTime sellTime);
 
     public int deleteSellTime(SellTime sellTime);
 

@@ -25,8 +25,8 @@ public class SellTimeController {
 
 
     @PostMapping("/selltimes")
-    public String insertSellTime(SellTime sellTime){
-        return service.insertSellTime(sellTime);
+    public String insertSellTimes(SellTime sellTime){
+        return service.insertSellTimes(sellTime);
     }
 
     @DeleteMapping("/selltimes")

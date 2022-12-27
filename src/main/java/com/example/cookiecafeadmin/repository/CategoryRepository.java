@@ -30,5 +30,9 @@ public class CategoryRepository {
         return mapper.deleteCategory(category);
     }
 
+    public int deleteCateMap(Category category){
+        return mapper.deleteCateMap(category);
+    }
+
 
 }

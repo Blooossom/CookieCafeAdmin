@@ -9,18 +9,14 @@
             INDATE
         FROM
             selltime
-        ORDER BY INDATE DESC
     </select>
-    <insert id="insertSellTime" parameterType="com.example.cookiecafeadmin.dto.SellTime">
-        INSERT INTO selltime(
-                             STARTTIME,
-                             ENDTIME
-        ) VALUES (
-                  #{starttime},
-                  #{endtime}
-                         )
+    <insert id="insertSellTimes" parameterType="com.example.cookiecafeadmin.dto.SellTime">
+        INSERT INTO selltime
+            (STARTTIME, ENDTIME)
+        VALUES
+            (#{startTime}, #{endTime})
     </insert>
-    <delete id="deleteSellTime" parameterType="String">
+    <delete id="deleteSellTime" parameterType="com.example.cookiecafeadmin.dto.SellTime">
         DELETE FROM
                    selltime
         WHERE ID = #{id}
