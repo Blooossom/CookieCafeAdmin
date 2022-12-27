@@ -14,7 +14,7 @@ import java.util.UUID;
 @Service
 public class PictureService {
 
-    @Value("D:/fileUpload")
+    @Value("C:/Users/user/Desktop/sell/")
     private String uploadDir;
 
     @Value("${site-file.upload-path}")

@@ -3,6 +3,7 @@
 <mapper namespace="com.example.cookiecafeadmin.mapper.ProductMapper">
     <select id="selectProductList" resultType="com.example.cookiecafeadmin.dto.Product">
         SELECT
+            id,
             productname,
             thumb,
             ordernum,
@@ -18,7 +19,6 @@
     </select>
     <insert id="addProduct" parameterType="com.example.cookiecafeadmin.dto.Product">
         INSERT INTO product (
-            id,
             productname,
             thumb,
             ordernum,
@@ -77,17 +77,17 @@
         WHERE ID = #{id}
     </update>
     <insert id="addCateMap" parameterType="com.example.cookiecafeadmin.dto.Product">
-        INSERT INTO catemap (
-                            cateid,
-                             etcid,
-                             etctable
+        INSERT INTO CATEMAP (
+                            CATEID,
+                             ETCID,
+                             ETCTABLE
         ) VALUES (
                  #{cateId},
                   #{id},
-                  ,'product'
+                  'PRODUCT'
                          )
     </insert>
-    <delete id="deleteCateMap" parameterType="com.example.cookiecafeadmin.dto.Product">
+    <delete id="deleteCatemaps" parameterType="com.example.cookiecafeadmin.dto.Product">
         DELETE FROM CATEMAP
         WHERE ETCID = #{id}
         AND ETCTABLE = 'PRODUCT'

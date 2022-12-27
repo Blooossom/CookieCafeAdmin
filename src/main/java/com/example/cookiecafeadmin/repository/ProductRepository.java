@@ -38,8 +38,8 @@ public class ProductRepository {
         return mapper.updateProduct(product);
     }
 
-    public int deleteCateMap(Product product){
-        return mapper.deleteCateMap(product);
+    public int deleteCatemaps(Product product) {
+        return mapper.deleteCatemaps(product);
     }
 
 }

@@ -21,7 +21,7 @@ public interface ProductMapper {
     public int updateProduct(Product product);
     public int addCateMap(Product product);
 
-    public int deleteCateMap(Product product);
+    public int deleteCatemaps(Product product);
 
 
 

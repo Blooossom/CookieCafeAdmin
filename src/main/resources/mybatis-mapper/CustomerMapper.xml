@@ -23,16 +23,15 @@
     </update>
     <select id="selectOrderList" resultType="com.example.cookiecafeadmin.dto.Order">
         SELECT
-            ID
-             ,USERID
-             ,NAME
-             ,PHONE
-             ,ADDRESS
-             ,ADDRESSDETAIL
-             ,INDATE
+            id,
+            userid,
+            name,
+            phone,
+            address,
+            addressdetail,
+            indate
         FROM
-            ORDERBOOK A
-        ORDER BY INDATE DESC
+            orderbook
     </select>
 
     <select id="selectOrderDetail" parameterType="com.example.cookiecafeadmin.dto.Order" resultType="com.example.cookiecafeadmin.dto.Order">

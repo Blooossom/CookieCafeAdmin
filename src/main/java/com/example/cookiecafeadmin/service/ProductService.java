@@ -34,10 +34,10 @@ public class ProductService {
     @Transactional
     public String deleteProducts(Product product) {
         int result = 0;
-        result += repo.deleteCateMap(product);
+        result += repo.deleteCatemaps(product);
         result += repo.deleteProducts(product);
         System.out.println(repo.deleteProducts(product));
-        System.out.println(repo.deleteCateMap(product));
+        System.out.println(repo.deleteCatemaps(product));
         System.out.println(result);
         if (result > 0) {
             return "success";
@@ -53,7 +53,7 @@ public class ProductService {
     public String updateProduct(Product product){
         int result = 0;
         result += repo.updateProduct(product);
-        result += repo.deleteCateMap(product);
+        result += repo.deleteCatemaps(product);
         result += repo.addCateMap(product);
         if (result > 0) {
             return "success";

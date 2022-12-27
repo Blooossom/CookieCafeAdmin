@@ -1,6 +1,7 @@
 package com.example.cookiecafeadmin.controller;
 
 
+import com.example.cookiecafeadmin.aop.SkipCheck;
 import com.example.cookiecafeadmin.dto.Admin;
 import com.example.cookiecafeadmin.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +17,14 @@ public class AdminController {
     @Autowired
     AdminService as;
 
+    @SkipCheck
     @PostMapping("/login")
     public Admin adminLogin(Admin admin, HttpSession session){
         Admin admin1 = as.adminLogin(admin);
         if (admin1 != null) {
-            session.setAttribute("id", admin1);
+            session.setAttribute("admin", admin1);
             return admin1;
         }
         return null;
     }
-
-
-
 }
